@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About JDM World</title>
+        <link id="pagestyle" rel="stylesheet" type="text/css" href="GreenThemeStyle.css">
+        <link rel="icon" type="'image/x-icon" href="../img/favicon.jpg" alt="JapanFlag">
+        <script type="text/javascript">
+            function swapstylesheet(sheet){    //To change between stylesheets within a page
+                if (sheet=== 'GreenThemeStyle.css'){ // Conditional 
+                    document.getElementById('pagestyle').setAttribute('href',sheet);
+                } else if(sheet==='BlueThemeStyle.css'){
+                    document.getElementById('pagestyle').setAttribute('href',sheet)
+                } else if(sheet=='RedThemeStyle.css'){
+                    document.getElementById('pagestyle').setAttribute('href',sheet)
+                }
+            }
+
+            let inactivityTimeout; // To promt an alert when user stays inactive for more than a minute
+            function resetActivityTime() {
+                clearTimeout(inactivityTimeout);
+                inactivityTimeout = setTimeout(sendAlert, 60000);
+            }
+            function sendAlert() {
+                alert('You have been inactive for a while, click "ok" to continue');
+            }
+            document.addEventListener('mousemove', resetActivityTime); // moving the mouse resets the inactivity timer
+            document.addEventListener('keypress', resetActivityTime);  // typing the keys of the keyboard resets the inactivity timer
+        </script>
+        </script>
+    </head>
+    <body>
+        <div id="JDM_GridContainer">
+            <div id="JDM_World_RX7">
+                <div id="JDM_World_TextBox">
+                    <h2 id="JDM_World_Text">
+                        <img src="../img/favicon.jpg" id="favicon" alt="JapanFlag">
+                        JDM WORLD
+                    </h2>
+                </div>
+            </div>
+            <div id="JDM_Sidebar">
+                <div id="JDM_NavBar">
+                    <nav id="NavBar">
+                        <a href="index.html">
+                            <h3 class="NavBar_Text">About JDM World</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar">
+                        <a href="HistoryOfJdm.html">
+                            <h3 class="NavBar_Text">History Of JDM</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar_Active">
+                        <a href="FamousJDMbuild.html">
+                            <h3 class="NavBar_Text_Active">Famous JDM Build</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar">
+                        <a href="ContactUs.html">
+                            <h3 class="NavBar_Text">Feedback</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar">
+                            <h3 class="NavBar_Text">Change Theme</h3>
+                            <ul>
+                                <li><button id="RagingRed" onclick="swapstylesheet('RedThemeStyle.css')">Raging Red</button></li> <!-- Calls the "swapstylesheet" finction on click-->
+                                <li><button id="GrassGreen" onclick="swapstylesheet('GreenThemeStyle.css')">Grass Green</button></li>  <!-- Calls the "swapstylesheet" finction on click-->
+                                <li><button id="Blueberry_Blue" onclick="swapstylesheet('BlueThemeStyle.css')">Blueberry Blue</button></li>  <!-- Calls the "swapstylesheet" finction on click-->
+                            </ul>              
+                    </nav>
+                </div>
+            </div>
+            <div id="JDM_Main">
+                <h2 id="Content_Head">Famous JDM builds</h2>
+                <p id="Content_Text">
+                    <div class="intro">
+                        <div style="text-align:center"></div>
+                            <h2 id="Gallery_Header">Image Gallery</h2>
+                            <p id="Gallery_Sub">Click on the images below to enlarge it:</p>
+                          </div>
+                          <table id="gallery_table">
+                            <th>
+                                <img src="../img/General_imgs/image1.jpg" class="gallery_img" alt="PatrolSuperSafari" onclick="myFunction(this);">
+                                <img src="../img/General_imgs/image2.jpg" class="gallery_img" alt="MitsubishiEvo" onclick="myFunction(this);">
+                            </th>
+                            <th>
+                                <img src="../img/General_imgs/image3.jpg" class="gallery_img" alt="NissanR32" onclick="myFunction(this);">
+                                <img src="../img/General_imgs/image4.jpeg" class="gallery_img" alt="NissanR35" onclick="myFunction(this);">
+                            </th>
+                            <th>
+                                <img src="../img/General_imgs/image5.jpg" class="gallery_img" alt="MazdaRX7" onclick="myFunction(this);">
+                                <img src="../img/General_imgs/image6.jpg" class="gallery_img" alt="NissanR34" onclick="myFunction(this);">
+                            </th>
+                            <th>
+                                <img src="../img/General_imgs/image7.jpg" class="gallery_img" alt="NissanSylvia" onclick="myFunction(this);">
+                                <img src="../img/General_imgs/image8.jpg" class="gallery_img" alt="HondaNSX" onclick="myFunction(this);">
+                            </th>
+                            <th>
+                                <img src="../img/General_imgs/image9.jpg" class="gallery_img" alt="NissanR34" onclick="myFunction(this);">
+                                <img src="../img/General_imgs/image10.jpg" class="gallery_img" alt="HondaAcura" onclick="myFunction(this);">
+                            </th>
+                          </table>
+                          
+                          <div class="container">
+                            <img id="expandedImg" style="width:100%">
+                          </div>
+                          
+                          <script>
+                          const myFunction = (imgs) => {
+                            const expandImg = document.getElementById("expandedImg");
+                            const imgText = document.getElementById("imgtext");
+                            expandImg.src = imgs.src;
+                            imgText.innerHTML = imgs.alt;
+                            expandImg.parentElement.style.display = "block";
+                            }
+
+                          </script>
+                          
+                    </div>
+                </p>
+            </div>
+            <div id="JDM_Footer_Fact">
+                <div id="Footer_Textbox">
+                    <h3 id="Footer_Head">First  Japanese-made car in 1907</h3>
+                    <p id="Footer_Text">
+                        The first automobile to be made in Japan was made in 
+                        1902 by Komanosuke Uchiyama from a gasoline engine that had been brought back from the United States.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

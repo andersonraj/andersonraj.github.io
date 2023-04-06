@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About JDM World</title>
+        <link id="pagestyle" rel="stylesheet" type="text/css" href="GreenThemeStyle.css">
+        <link rel="icon" type="'image/x-icon" href="../img/favicon.jpg" alt="JapanFlag">
+        <script type="text/javascript">
+            function swapstylesheet(sheet){    //To change between stylesheets within a page
+                if (sheet=== 'GreenThemeStyle.css'){ // Conditional 
+                    document.getElementById('pagestyle').setAttribute('href',sheet);
+                } else if(sheet==='BlueThemeStyle.css'){
+                    document.getElementById('pagestyle').setAttribute('href',sheet)
+                } else if(sheet=='RedThemeStyle.css'){
+                    document.getElementById('pagestyle').setAttribute('href',sheet)
+                }
+            }
+            let inactivityTimeout; // To promt an alert when user stays inactive for more than a minute
+            function resetActivityTime() {
+                clearTimeout(inactivityTimeout);
+                inactivityTimeout = setTimeout(sendAlert, 60000);
+            }
+            function sendAlert() {
+                alert('You have been inactive for a while, click "ok" to continue');
+            }
+            document.addEventListener('mousemove', resetActivityTime); // moving the mouse resets the inactivity timer
+            document.addEventListener('keypress', resetActivityTime);  // typing the keys of the keyboard resets the inactivity timer
+        </script>
+        </script>
+    </head>
+    <body>
+        <div id="JDM_GridContainer">
+            <div id="JDM_World_RX7">
+                <div id="JDM_World_TextBox">
+                    <h2 id="JDM_World_Text">
+                        <img src="../img/favicon.jpg" id="favicon">
+                        JDM WORLD
+                    </h2>                  
+                </div>
+            </div>
+            <div id="JDM_Sidebar">
+                <div id="JDM_NavBar">
+                    <nav id="NavBar_Active">
+                        <a href="index.html">
+                            <h3 class="NavBar_Text_Active">About JDM World</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar">
+                        <a href="HistoryOfJdm.html">
+                            <h3 class="NavBar_Text">History Of JDM</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar">
+                        <a href="FamousJDMbuild.html">
+                            <h3 class="NavBar_Text">Famous JDM Build</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar">
+                        <a href="ContactUs.html">
+                            <h3 class="NavBar_Text">Feedback</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar">
+                            <h3 class="NavBar_Text">Change Theme</h3>
+                            <ul>
+                                <li><button id="RagingRed" onclick="swapstylesheet('RedThemeStyle.css')">Raging Red</button></li> <!-- Calls the "swapstylesheet" finction on click-->
+                                <li><button id="GrassGreen" onclick="swapstylesheet('GreenThemeStyle.css')">Grass Green</button></li>  <!-- Calls the "swapstylesheet" finction on click-->
+                                <li><button id="Blueberry_Blue" onclick="swapstylesheet('BlueThemeStyle.css')">Blueberry Blue</button></li>  <!-- Calls the "swapstylesheet" finction on click-->
+                            </ul>            
+                    </nav>
+                </div>
+            </div>
+            <div id="JDM_Main">
+                <h2 id="Content_Head">Welcome to JDM World</h2>
+                <p id="Content_Text">
+                    The term JDM (Japan Domestic Market) originally represented cars sold primarily in Japan, 
+                    but it has come to mean any high-performance Japanese model, where a new or used car sold exclusively in Japan 
+                    or in multiple global markets, including the U.S. and Canada<br><br>
+                    That started to change in the 1980s, as sporty two-door coupes like the Honda Prelude, Mazda RX-7, Nissan 240SX, 
+                    and Toyota Supra and Celica joined the Nissan 300ZX in U.S. showrooms. But the real pivot toward JDM vehicles came 
+                    in the 1990s, when magazines like Sport Compact Car and Super Street focused on the growing enthusiasm for Japanese 
+                    “tuner cars” and the enthusiast culture forming around them. The Acura Integra, Honda Civic, Mitsubishi Eclipse, 
+                    and Nissan 240SX were among the most common models featured in these magazines.<br><br>
+                    The growing popularity of those American market magazines was conveniently timed with a wave of Japanese supercars coming 
+                    to U..S showrooms, such as the all-new Honda NSX (badged as an Acura in the U.S.) and Mitsubishi 3000GT VR4. The 1990s also
+                    saw substantial horsepower and chassis upgrades to existing U.S-market Japanese sports cars like the RX-7, Supra, and 300ZX, 
+                    many of them now featuring twin-turbo engines and successfully competing in high-profile motorsports activities.
+                </p>
+            </div>
+            <div id="JDM_Footer_Fact">
+                <div id="Footer_Textbox">
+                    <h3 id="Footer_Head">JDM Vs. J-Spec</h3>
+                    <p id="Footer_Text">
+                        The cars and parts Japan makes for Japan, to be sold only within the international borders, are JDM cars. 
+                        The cars and parts the Japanese automakers make for international markets, like the USA, which are called J-Spec.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

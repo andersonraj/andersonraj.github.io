@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About JDM World</title>
+        <link id="pagestyle" rel="stylesheet" type="text/css" href="GreenThemeStyle.css">
+        <link rel="icon" type="'image/x-icon" href="../img/favicon.jpg" alt="JapanFlag">
+        <script type="text/javascript">
+            function swapstylesheet(sheet){    //To change between stylesheets within a page
+                if (sheet=== 'GreenThemeStyle.css'){ // Conditional 
+                    document.getElementById('pagestyle').setAttribute('href',sheet);
+                } else if(sheet==='BlueThemeStyle.css'){
+                    document.getElementById('pagestyle').setAttribute('href',sheet)
+                } else if(sheet=='RedThemeStyle.css'){
+                    document.getElementById('pagestyle').setAttribute('href',sheet)
+                }
+            }
+
+            let inactivityTimeout; // To promt an alert when user stays inactive for more than a minute
+            function resetActivityTime() {
+                clearTimeout(inactivityTimeout);
+                inactivityTimeout = setTimeout(sendAlert, 60000);
+            }
+            function sendAlert() {
+                alert('You have been inactive for a while, click "ok" to continue');
+            }
+            document.addEventListener('mousemove', resetActivityTime); // moving the mouse resets the inactivity timer
+            document.addEventListener('keypress', resetActivityTime);  // typing the keys of the keyboard resets the inactivity timer
+        </script>
+        </script>
+    </head>
+    <body>
+        <div id="JDM_GridContainer">
+            <div id="JDM_World_RX7">
+                <div id="JDM_World_TextBox">
+                    <h2 id="JDM_World_Text">
+                        <img src="../img/favicon.jpg" id="favicon">
+                        JDM WORLD
+                    </h2>                
+                </div>
+            </div>
+            <div id="JDM_Sidebar">
+                <div id="JDM_NavBar">
+                    <nav id="NavBar">
+                        <a href="index.html">
+                            <h3 class="NavBar_Text">About JDM World</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar_Active">
+                        <a href="HistoryOfJdm.html">
+                            <h3 class="NavBar_Text_Active">History Of JDM</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar">
+                        <a href="FamousJDMbuild.html">
+                            <h3 class="NavBar_Text">Famous JDM Build</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar">
+                        <a href="ContactUs.html">
+                            <h3 class="NavBar_Text">Feedback</h3>
+                        </a>
+                    </nav>
+                    <nav id="NavBar">
+                            <h3 class="NavBar_Text">Change Theme</h3>
+                            <ul>
+                                <li><button id="RagingRed" onclick="swapstylesheet('RedThemeStyle.css')">Raging Red</button></li> <!-- Calls the "swapstylesheet" finction on click-->
+                                <li><button id="GrassGreen" onclick="swapstylesheet('GreenThemeStyle.css')">Grass Green</button></li>  <!-- Calls the "swapstylesheet" finction on click-->
+                                <li><button id="Blueberry_Blue" onclick="swapstylesheet('BlueThemeStyle.css')">Blueberry Blue</button></li>  <!-- Calls the "swapstylesheet" finction on click-->
+                            </ul>                 
+                    </nav>
+                </div>
+            </div>
+            <div id="JDM_Main">
+                <h2 id="Content_Head">History of JDM</h2>
+                <p id="Content_Text">
+                    Black-ish’s Marcus Scribner has been a star on the Emmy-winning series since he was 13. Eight seasons later, 
+                    and with the series finale on the horizon, we caught up with the actor to nerd-out on one of his favorite off-screen passions: 
+                    Japanese Domestic Motors, otherwise known as JDM car culture.<br><br>
+
+                    The JDM car scene first took hold in Japan—specifically Osaka. In the late ’80s, car enthusiasts started to take notice and
+                    fall hard for Japan’s sports cars, giving birth to JDM car culture. The Fast and Furious movies only helped further the movement
+                    into the spotlight, raising it to fever pitch levels. Suddenly car lovers were scouring the pages of auto trades buying up Honda
+                    Civics to modify.<br><br>
+                    
+                    Not all Japanese cars can be categorized as JDM–only those made by Japanese automakers specifically to be sold in Japan could 
+                    be considered so. Cars like the Nissan GT-R, Mark IV Toyota Supra, Mazda RX-7 FD3S, and Honda NSX soon became the holy grail. 
+                    To this day, the mid-to-late ’90s cars remain the most covetable, gaining legendary status even amongst the uninitiated.<br><br>
+
+                    But contrary to popular perception, JDM is not all chrome-plated rims, spinning, and flashy body kits. It’s about bringing out 
+                    the beauty in the beast and its maximum performance through modifications that don’t compromise the original physical design of the vehicle. 
+                    It’s about taking something mass-produced and turning it into a one-off, poured over with time, sweat, attention to detail, 
+                    and a lot of love to create something unique.
+                </p>
+            </div>
+            <div id="JDM_Footer_Fact">
+                <div id="Footer_Textbox">
+                    <h3 id="Footer_Head">The 25-year Cooling Period</h3>
+                    <p id="Footer_Text">
+                        There is a 25-year waiting period to import JDM cars. You can import a JDM car in the US only 25 years after it was released 
+                        in the Japanese Domestic Market. So until very recently, even the Skyline GT-R was illegal in America..
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
